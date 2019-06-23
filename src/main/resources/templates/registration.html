@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http:/>/www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>rejestracja</title>
+</head>
+<body class="text-center">
+<form class="sign" th:action="@{/registeruser}" method="post" th:object="${userToInsert}">
+
+    <p>Login:<input type="text" th:field="*{login}"/></p>
+    <p>Name:<input type="text" th:field="*{userDetailsDto.name}"/></p>
+    <p>Surame:<input type="text" th:field="*{userDetailsDto.surname}"/></p>
+    <p>Email:<input type="text" th:field="*{userDetailsDto.email}"/></p>
+    <p>BornDate:<input type="date" th:field="*{userDetailsDto.bornDate}"/></p>
+    <p>JoinDate:<input type="date" th:field="*{userDetailsDto.joinDate}"/></p>
+    <p><input type="submit" value="Submit"/>
+        <input type="reset" value="Reset"/>
+    </p>
+
+</form>
+</body>
+</html>
