@@ -1,6 +1,7 @@
 package com.example.demox.entity;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Post {
@@ -12,11 +13,29 @@ public class Post {
     private String text;
     @Column(name="modify_date")
     private Date modifyDate;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
     @Column(name="delete_date")
     private Date deleteDate;
+    @OneToMany(mappedBy = "post", cascade=CascadeType.ALL)
+    private List<Comment>comments;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
 
     public int getId() {
         return id;

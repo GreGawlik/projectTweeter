@@ -1,25 +1,48 @@
 package com.example.demox.entity;
+
 import com.example.demox.model.Role;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
-@Id
-@GeneratedValue(strategy= GenerationType.IDENTITY)
-private Long id;
-private String login;
-private String password;
-private Role role;
-@OneToOne(cascade = CascadeType.ALL)
-@JoinColumn(name = "user_details_id")
-private UserDetails userDetails;
-@Column(name="lock_date")
-private Date lockDate;
-@Column(name="unlock_date")
-private Date unlockDate;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String login;
+    private String password;
+    @Enumerated(EnumType.STRING)
+    private Role role;
+    @Column(name = "lock_date")
+    private Date lockDate;
+    @Column(name = "unlock_date")
+    private Date unlockDate;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_details_id")
+    private UserDetails userDetails;
+    @OneToMany (mappedBy = "user", cascade=CascadeType.ALL)
+    private List<Post> posts;
+    @OneToMany(mappedBy="user", cascade=CascadeType.ALL)
+    private List<Comment>comments;
 
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
 
     public Long getId() {
         return id;

@@ -4,24 +4,25 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "user_details")
 public class UserDetails {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
     private String surname;
-    @Column(name="e-mail")
+    @Column(name="mail")
     private String email;
     @Column(name="born_date")
     private Date bornDate;
     @Column(name="join_date")
     private Date joinDate;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

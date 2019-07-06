@@ -15,10 +15,10 @@ public class Comment {
     private Date modifyDate;
     @Column(name="deletedate")
     private Date deleteDate;
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name="post_id")
     private Post post;
 

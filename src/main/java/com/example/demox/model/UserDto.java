@@ -8,7 +8,7 @@ public class UserDto {
     private String login;
     private String password;
     private Role role;
-    private UserDetailsDto userDetailsDto;
+    private UserDetailsDto userDetails;
     private Date lockDate;
     private Date unlockDate;
 
@@ -36,12 +36,12 @@ public class UserDto {
         this.role = role;
     }
 
-    public UserDetailsDto getUserDetailsDto() {
-        return userDetailsDto;
+    public UserDetailsDto getUserDetails() {
+        return userDetails;
     }
 
-    public void setUserDetailsDto(UserDetailsDto userDetailsDto) {
-        this.userDetailsDto = userDetailsDto;
+    public void setUserDetails(UserDetailsDto userDetails) {
+        this.userDetails = userDetails;
     }
 
     public Date getLockDate() {

@@ -24,7 +24,7 @@ public class UserService {
     public void saveUser(UserDto userDto)throws ParseException {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String newDateFormat=sdf.format(new Date());
-        userDto.setLockDate(sdf.parse(newDateFormat));
+        userDto.getUserDetails().setJoinDate(sdf.parse(newDateFormat));
         userDto.setRole(Role.ROLE_USER);
         User userToSave=modelMapper.map(userDto, User.class);
         userRepository.save(userToSave);

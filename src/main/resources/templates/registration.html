@@ -16,11 +16,10 @@
 
     <p>Login:<input type="text" th:field="*{login}"/></p>
     <p>Password:<input type="text" th:field="*{password}"/></p>
-    <p>Name:<input type="text" th:field="*{userDetailsDto.name}"/></p>
-    <p>Surame:<input type="text" th:field="*{userDetailsDto.surname}"/></p>
-    <p>Email:<input type="text" th:field="*{userDetailsDto.email}"/></p>
-    <p>BornDate:<input type="date" th:field="*{userDetailsDto.bornDate}"/></p>
-    <p>JoinDate:<input type="date" th:field="*{userDetailsDto.joinDate}"/></p>
+    <p>Name:<input type="text" th:field="*{userDetails.name}"/></p>
+    <p>Surame:<input type="text" th:field="*{userDetails.surname}"/></p>
+    <p>Email:<input type="email" th:field="*{userDetails.email}"/></p>
+    <p>BornDate:<input type="date" th:field="*{userDetails.bornDate}"/></p>
     <p><input type="submit" value="Submit"/>
         <input type="reset" value="Reset"/>
     </p>

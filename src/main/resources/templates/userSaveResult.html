@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="pol">
+<html xmlns="http:/>/www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">>
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
 <h1>User saved in application</h1>
+<form th:action="@{/index}">
+    <p>
+        <label for="index">Aby przejść do Tweetera:) kliknij tutaj=></label>
+        <button class="btn btn-primary" type="submit">TWEETER:)</button>
+    </p>
+</form>
 </body>
 </html>
