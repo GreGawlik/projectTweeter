@@ -13,5 +13,12 @@
 </head>
 <body>
 <h2>Dzień Dobry Wietnam!</h2>
+<h3>Możesz zacząc pisać...</h3>
+<form th:action="@{/login}">
+    <p style="color:deepskyblue">
+        <label for="login">Aby się wylogować, kliknij tutaj=></label>
+        <button class="btn btn-primary" type="submit">LOGOUT</button>
+    </p>
+</form>
 </body>
 </html>

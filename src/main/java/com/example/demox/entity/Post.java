@@ -7,7 +7,7 @@ import java.util.List;
 public class Post {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(name="create_date")
     private Date createDate;
     private String text;
@@ -37,11 +37,11 @@ public class Post {
         this.comments = comments;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

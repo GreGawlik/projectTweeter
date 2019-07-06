@@ -7,7 +7,7 @@ import java.util.Date;
 public class Comment {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(name="create_date")
     private Date createDate;
     private String text;
@@ -22,11 +22,11 @@ public class Comment {
     @JoinColumn(name="post_id")
     private Post post;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
