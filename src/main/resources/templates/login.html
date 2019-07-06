@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8"/>
     <title>logowanie</title>
+    <link type="text/css" rel="stylesheet"
+          href="../static/style.css"
+          th:href="@{/style.css}"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
 <body class="text-center">
 
@@ -16,9 +21,10 @@
     <label for="inputPassword">Insert your password</label>
     <input type="text" id="inputPassword" name="password" placeholders="Podaj swoje hasło"/>
     <button type="submit">Zaloguj</button>
+    <p>
     <label for="registration">Zarejestruj się!</label>
-    <button type="submit">Rejestracja</button>
-
+    <button class="btn btn-primary" type="submit">Rejestracja</button>
+    </p>
 </form>
 
 </body>

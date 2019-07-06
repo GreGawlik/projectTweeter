@@ -48,19 +48,15 @@ public class UserDetails {
     public void setEmail(String email) {
         this.email = email;
     }
-
     public Date getBornDate() {
         return bornDate;
     }
-
     public void setBornDate(Date bornDate) {
         this.bornDate = bornDate;
     }
-
     public Date getJoinDate() {
         return joinDate;
     }
-
     public void setJoinDate(Date joinDate) {
         this.joinDate = joinDate;
     }

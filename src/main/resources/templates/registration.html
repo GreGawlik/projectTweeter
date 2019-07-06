@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html xmlns="http:/>/www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8"/>
     <title>rejestracja</title>
+    <link type="text/css" rel="stylesheet"
+          href="../static/style.css"
+          th:href="@{/style.css}"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 </head>
 <body class="text-center">
 <form class="sign" th:action="@{/registeruser}" method="post" th:object="${userToInsert}">
 
     <p>Login:<input type="text" th:field="*{login}"/></p>
+    <p>Password:<input type="text" th:field="*{password}"/></p>
     <p>Name:<input type="text" th:field="*{userDetailsDto.name}"/></p>
     <p>Surame:<input type="text" th:field="*{userDetailsDto.surname}"/></p>
     <p>Email:<input type="text" th:field="*{userDetailsDto.email}"/></p>

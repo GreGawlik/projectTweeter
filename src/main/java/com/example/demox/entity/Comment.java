@@ -15,10 +15,12 @@ public class Comment {
     private Date modifyDate;
     @Column(name="deletedate")
     private Date deleteDate;
-    @Column(name="user_id")
-    private int userId;
-    @Column(name="post_id")
-    private int postId;
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="user_id")
+    private User user;
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="post_id")
+    private Post post;
 
     public int getId() {
         return id;
@@ -60,19 +62,19 @@ public class Comment {
         this.deleteDate = deleteDate;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUserId() {
+        return user;
     }
 
     public void setUserId(int userId) {
-        this.userId = userId;
+        this.user = user;
     }
 
-    public int getPostId() {
-        return postId;
+    public Post getPostId() {
+        return post;
     }
 
-    public void setPostId(int postId) {
-        this.postId = postId;
+    public void setPostId(Post post) {
+        this.post = post;
     }
 }

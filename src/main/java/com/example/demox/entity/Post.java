@@ -12,8 +12,9 @@ public class Post {
     private String text;
     @Column(name="modify_date")
     private Date modifyDate;
-    @Column(name="user_id")
-    private int userId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="user_id")
+    private User user;
     @Column(name="delete_date")
     private Date deleteDate;
 
@@ -49,12 +50,12 @@ public class Post {
         this.modifyDate = modifyDate;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUserId() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserId(User user) {
+        this.user = user;
     }
 
     public Date getDeleteDate() {
